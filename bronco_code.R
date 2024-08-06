@@ -24,7 +24,7 @@ cass_kg <- 69
 
 kcal_min <- function(vo2_max, kg) { 
   # convert ml/kg/min vo2 max to L/kg/min
-  vo2_max_L <- vo2_max/100 
+  vo2_max_L <- vo2_max/1000 
   
   # liters/min
   L_min <- vo2_max_L * kg
@@ -129,7 +129,8 @@ constraint_function_nick <- function(params) {
   d2_2 <- 40*10 - 5*10
   # no last decel 
   d3_2 <- 60*10 - 5*9
-  
+
+# find energy   
   E_acc_dec <- (E_acc + E_dec)
   E_run <- (c1 * v1 * d1_2) + (c2 * v2 * d2_2) + (c3 * v3 * d3_2)
   
