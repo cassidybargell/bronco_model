@@ -171,12 +171,13 @@ constraint_function_cass <- function(params) {
   
   # energy totals 
   # find actual distances at speed given acceleration being constant 
-  d1_2 <- 20*10 - 5*10
-  d2_2 <- 40*10 - 5*10
+  d1_2 <- 20*10 - (5*10)
+  d2_2 <- 40*10 - (5*10)
   # no last decel 
-  d3_2 <- 60*10 - 5*9
+  d3_2 <- 60*10 - (5*9)
   
   E_acc_dec <- (E_acc + E_dec)
+  # this is super wrong 
   E_run <- (c1 * v1 * d1_2) + (c2 * v2 * d2_2) + (c3 * v3 * d3_2)
   
   # Calculate total energy
